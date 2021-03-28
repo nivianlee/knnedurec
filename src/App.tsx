@@ -1,9 +1,9 @@
 import React from "react";
-import logo from "./logo.svg";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import "./App.css";
+import TopBar from "./component/TopBar";
 
-const theme = createMuiTheme({
+const paletteTheme = createMuiTheme({
   palette: {
     primary: {
       main: "#0e4da4",
@@ -16,23 +16,23 @@ const theme = createMuiTheme({
   },
 });
 
+const theme = createMuiTheme(
+  {
+    overrides: {
+      MuiButton: {
+        root: {
+          textTransform: "none",
+        },
+      },
+    },
+  },
+  paletteTheme
+);
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TopBar />
     </ThemeProvider>
   );
 };
