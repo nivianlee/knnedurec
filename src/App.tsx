@@ -24,6 +24,15 @@ const theme = createMuiTheme(
           textTransform: "none",
         },
       },
+      MuiLink: {
+        button: {
+          color: "#000000",
+          "&:hover": {
+            color: paletteTheme.palette.primary.main,
+            textDecoration: "none",
+          },
+        },
+      },
     },
   },
   paletteTheme
