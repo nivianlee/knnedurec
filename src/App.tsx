@@ -1,10 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import "./App.css";
 
-function App() {
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#0e4da4",
+      contrastText: "#ffffff",
+    },
+    secondary: {
+      main: "#ffffff",
+      contrastText: "#0e4da4",
+    },
+  },
+});
+
+const App = () => {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -19,8 +33,8 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
